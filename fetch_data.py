@@ -1,3 +1,6 @@
+"""
+Модуль для извлечения и отображения данных из базы данных.
+"""
 from sqlalchemy.orm import sessionmaker
 from models import engine, User, Post
 
@@ -8,7 +11,8 @@ session = Session()
 users = session.query(User).all()
 print("Все пользователи:")
 for user in users:
-    print(f"User ID: {user.id}, Username: {user.username}, Email: {user.email}, Password: {user.password}")
+    print(f"User ID: {user.id}, Username: {user.username}, "
+          f"Email: {user.email}, Password: {user.password}")
 print()
 
 # Извлечение всех постов с полной информацией о пользователях
@@ -27,5 +31,3 @@ for post in user_posts:
 
 # Закрываем сессию
 session.close()
-
-

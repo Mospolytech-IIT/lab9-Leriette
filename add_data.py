@@ -1,3 +1,6 @@
+"""
+Модуль для добавления тестовых данных в базу данных.
+"""
 from sqlalchemy.orm import sessionmaker
 from models import engine, User, Post
 

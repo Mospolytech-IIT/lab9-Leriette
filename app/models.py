@@ -1,9 +1,15 @@
+"""
+Модуль для описания моделей базы данных.
+"""
+
 from sqlalchemy import Column, Integer, String, ForeignKey, Text
 from sqlalchemy.orm import relationship
 from .database import Base
 
 class User(Base):
+    """Модель пользователя."""
     __tablename__ = "users"
+
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(50), unique=True, nullable=False)
     email = Column(String(100), unique=True, nullable=False)
@@ -11,7 +17,9 @@ class User(Base):
     posts = relationship("Post", back_populates="user")
 
 class Post(Base):
+    """Модель поста."""
     __tablename__ = "posts"
+
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(200), nullable=False)
     content = Column(Text, nullable=False)
