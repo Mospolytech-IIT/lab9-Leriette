@@ -7,7 +7,6 @@ from models import engine, User, Post
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# Извлечение всех пользователей с полной информацией
 users = session.query(User).all()
 print("Все пользователи:")
 for user in users:
@@ -15,7 +14,6 @@ for user in users:
           f"Email: {user.email}, Password: {user.password}")
 print()
 
-# Извлечение всех постов с полной информацией о пользователях
 posts = session.query(Post).all()
 print("Все посты с информацией о пользователях:")
 for post in posts:
@@ -23,11 +21,9 @@ for post in posts:
           f"User: {post.user.username} (Email: {post.user.email})")
 print()
 
-# Извлечение постов конкретного пользователя (например, user_id = 2)
 user_posts = session.query(Post).filter(Post.user_id == 2).all()
 print("Посты пользователя с ID 2:")
 for post in user_posts:
     print(f"Содержимое: {post.content}")
 
-# Закрываем сессию
 session.close()

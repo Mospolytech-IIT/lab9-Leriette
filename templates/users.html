@@ -4,7 +4,7 @@
     <title>Пользователи</title>
 </head>
 <body>
-    <!-- Кнопка для возврата на главную -->
+
     <a href="/" class="btn back-btn">Назад на главную</a>
     <h1>Список пользователей</h1>
     <a href="/users/create/">Добавить пользователя</a>
@@ -13,7 +13,7 @@
             <th>ID</th>
             <th>Имя пользователя</th>
             <th>Email</th>
-            <th>Пароль</th> <!-- Новый столбец -->
+            <th>Пароль</th>
             <th>Действия</th>
         </tr>
         {% for user in users %}
@@ -21,7 +21,7 @@
             <td>{{ user.id }}</td>
             <td>{{ user.username }}</td>
             <td>{{ user.email }}</td>
-            <td>{{ user.password }}</td> <!-- Вывод пароля -->
+            <td>{{ user.password }}</td>
             <td>
                 <a href="/users/edit/{{ user.id }}/">Редактировать</a>
                 <a href="/users/delete/{{ user.id }}/">Удалить</a>
