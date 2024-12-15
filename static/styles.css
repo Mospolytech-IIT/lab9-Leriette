@@ -1,0 +1,78 @@
+/* Общий стиль для всего сайта */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Основной контейнер для контента */
+.container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стиль для формы */
+form {
+    display: flex;
+    flex-direction: column;  /* Важно: элементы в столбик */
+    gap: 15px; /* Отступы между элементами */
+    align-items: stretch; /* Выравнивание по ширине */
+}
+
+/* Стиль для меток */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 100%; /* Это гарантирует, что метки не будут перепрыгивать на строку */
+}
+
+/* Стиль для полей ввода и textarea */
+input, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%; /* Поля будут растягиваться на всю доступную ширину */
+}
+
+/* Стиль для кнопок */
+button, .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+/* Стиль кнопок при наведении */
+button:hover, .btn:hover {
+    background-color: #ccc;
+}
+
+/* Стиль для кнопки "Submit" */
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Стиль для кнопки "Back to Home" */
+.back-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background-color: #45a049;
+}
