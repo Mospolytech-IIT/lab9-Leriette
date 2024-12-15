@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Посты</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Кнопка для возврата на главную -->
+        <a href="/" class="btn back-btn">Назад на главную</a>
+
+        <h1>Список постов</h1>
+        <a href="/posts/create/" class="btn add-btn">Добавить пост</a>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Заголовок</th>
+                    <th>Контент</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.content }}</td>
+                    <td>
+                        <a href="/posts/edit/{{ post.id }}/" class="btn">Редактировать</a>
+                        <a href="/posts/delete/{{ post.id }}/" class="btn">Удалить</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

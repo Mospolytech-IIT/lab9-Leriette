@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пользователь</title>
+</head>
+<body>
+    <h1>{% if user %}Редактировать пользователя{% else %}Создать пользователя{% endif %}</h1>
+    <form method="post" action="{% if user %}/users/edit/{{ user.id }}/{% else %}/users/create/{% endif %}">
+        <label>Имя пользователя:</label>
+        <input type="text" name="username" value="{{ user.username if user else '' }}" required><br>
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ user.email if user else '' }}" required><br>
+        <label>Пароль:</label>
+        {% if user %}
+            <input type="text" name="password" value="{{ user.password }}" required><br>
+        {% else %}
+            <input type="password" name="password" value="" required><br>
+        {% endif %}
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>
